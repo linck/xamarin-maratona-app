@@ -22,6 +22,7 @@ namespace MonkeyHubApp.ViewModels
 
             Contents = new ObservableCollection<Content>();
             ShowContentCommand = new Command<Content>(ExecuteShowContentCommand);
+            Title = tag.Name;
         }
 
         private async void ExecuteShowContentCommand(Content content)
