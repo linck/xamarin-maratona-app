@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using MonkeyHubApp.Models;
-using System.Net.Http;
 using Newtonsoft.Json;
-using System.Net.Http.Headers;
-using System.IO;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(MonkeyHubApp.Services.MonkeyHubApiService))]
 namespace MonkeyHubApp.Services
 {
-    class MonkeyHubApiService : IMonkeyHubApiService
+    public class MonkeyHubApiService : IMonkeyHubApiService
     {
         private const string BaseUrl = "https://monkey-hub-api.azurewebsites.net/api/";
 

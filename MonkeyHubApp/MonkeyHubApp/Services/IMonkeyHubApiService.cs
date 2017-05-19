@@ -1,13 +1,13 @@
-﻿using MonkeyHubApp.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using MonkeyHubApp.Models;
 
 namespace MonkeyHubApp.Services
 {
-    interface IMonkeyHubApiService
+    public interface IMonkeyHubApiService
     {
-        Task<List<Tag>> GetTagsAsync();
         Task<List<Content>> GetContentsByTagIdAsync(string tagId);
+        Task<List<Tag>> GetTagsAsync();
         Task<List<Content>> GetContentsByFilterAsync(string filter);
     }
 }

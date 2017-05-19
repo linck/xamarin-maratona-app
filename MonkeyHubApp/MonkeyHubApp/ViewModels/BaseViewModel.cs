@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
+using MonkeyHubApp.Services;
 using Xamarin.Forms;
 
 namespace MonkeyHubApp.ViewModels
@@ -24,6 +25,7 @@ namespace MonkeyHubApp.ViewModels
             {
                 return false;
             }
+
             storage = value;
             OnPropertyChanged(propertyName);
             return true;
@@ -39,6 +41,14 @@ namespace MonkeyHubApp.ViewModels
 
             var page = Activator.CreateInstance(viewType) as Page;
 
+            if (viewModelType.GetTypeInfo().DeclaredConstructors.Any(c => c.GetParameters().Any(p => p.ParameterType == typeof(IMonkeyHubApiService))))
+            {
+                var argsList = args.ToList();
+                var monkeyHubApiService = DependencyService.Get<IMonkeyHubApiService>();
+                argsList.Insert(0, monkeyHubApiService);
+                args = argsList.ToArray();
+            }
+
             var viewModel = Activator.CreateInstance(viewModelType, args);
             if (page != null)
             {
@@ -46,6 +56,16 @@ namespace MonkeyHubApp.ViewModels
             }
 
             await Application.Current.MainPage.Navigation.PushAsync(page);
+        }
+
+        public async Task DisplayAlert(string title, string message, string cancel)
+        {
+            await Application.Current.MainPage.DisplayAlert(title, message, cancel);
+        }
+
+        public async Task DisplayAlert(string title, string message, string accept, string cancel)
+        {
+            await Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
         }
     }
 }

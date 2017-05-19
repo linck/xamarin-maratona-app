@@ -1,16 +1,12 @@
-﻿using MonkeyHubApp.Models;
-using MonkeyHubApp.Services;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using MonkeyHubApp.Models;
+using MonkeyHubApp.Services;
 using Xamarin.Forms;
 
 namespace MonkeyHubApp.ViewModels
 {
-    class CategoriaViewModel : BaseViewModel
+    public class CategoriaViewModel : BaseViewModel
     {
         private readonly IMonkeyHubApiService _monkeyHubApiService;
         private readonly Tag _tag;
