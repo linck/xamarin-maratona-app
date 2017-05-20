@@ -4,6 +4,6 @@ namespace MonkeyHubApp.ViewModels
 {
     public class AboutViewModel : BaseViewModel
     {
-        public string Versao => CrossVersion.Current.Version;
+        public string Versao => "1.0.0.0";
     }
 }
