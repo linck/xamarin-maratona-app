@@ -8,6 +8,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Sobre" Command="{Binding AboutCommand}" />
         <ToolbarItem Text="Buscar" Command="{Binding SearchCommand}" />
+        <ToolbarItem Text="Login" Command="{Binding LoginCommand}" />
     </ContentPage.ToolbarItems>
     <controls:MyListView 
         ItemsSource="{Binding Tags}" 

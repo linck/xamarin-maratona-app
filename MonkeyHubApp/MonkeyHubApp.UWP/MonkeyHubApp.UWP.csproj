@@ -90,12 +90,14 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="packages.config" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Auth\SocialAuthentication.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -153,7 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MonkeyHubApp\MonkeyHubApp.csproj">
-      <Project>{f0a2d14e-245b-48d0-bbb4-2bb465a2cbdc}</Project>
+      <Project>{0956eba0-9c36-4d19-9431-dffa37814f64}</Project>
       <Name>MonkeyHubApp</Name>
     </ProjectReference>
   </ItemGroup>

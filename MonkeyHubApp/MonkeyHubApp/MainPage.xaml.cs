@@ -19,8 +19,11 @@ namespace MonkeyHubApp
         {
             base.OnAppearing();
 
-            if(ViewModel != null)
+            if (ViewModel != null)
+            {
                 await ViewModel.LoadAsync();
+            }
+                
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

@@ -1,8 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using MonkeyHubApp.Models;
 using MonkeyHubApp.Services;
 using Xamarin.Forms;
+using MonkeyHubApp.Helpers;
 
 namespace MonkeyHubApp.ViewModels
 {
@@ -17,6 +19,8 @@ namespace MonkeyHubApp.ViewModels
 
         public Command<Tag> ShowCategoriaCommand { get; }
 
+        public Command LoginCommand { get; }
+
         public MainViewModel(IMonkeyHubApiService monkeyHubApiService)
         {
             _monkeyHubApiService = monkeyHubApiService;
@@ -24,6 +28,13 @@ namespace MonkeyHubApp.ViewModels
             AboutCommand = new Command(ExecuteAboutCommand);
             SearchCommand = new Command(ExecuteSearchCommand);
             ShowCategoriaCommand = new Command<Tag>(ExecuteShowCategoriaCommand);
+            LoginCommand = new Command(ExecuteLoginCommand);
+            Title = "Categorias";
+        }
+
+        private async void ExecuteLoginCommand()
+        {
+            await PushAsync<LoginViewModel>();
         }
 
         private async void ExecuteSearchCommand()
@@ -43,6 +54,7 @@ namespace MonkeyHubApp.ViewModels
 
         public async Task LoadAsync()
         {
+
             var tags = await _monkeyHubApiService.GetTagsAsync();
 
             Tags.Clear();

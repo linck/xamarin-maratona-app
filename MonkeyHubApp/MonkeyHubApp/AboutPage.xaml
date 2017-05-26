@@ -8,6 +8,9 @@
             <TableSection Title="Versão">
                 <TextCell Text="{Binding Versao}" />
             </TableSection>
+            <TableSection Title="Informação do usuário">
+                <TextCell Text="{Binding UserInformation}" />
+            </TableSection>
             <TableSection Title="Termos de Uso">
                 <SwitchCell Text="Aceito os termos de uso" />
             </TableSection>

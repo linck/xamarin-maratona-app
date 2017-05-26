@@ -1,15 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonkeyHubApp.Android", "MonkeyHubApp\MonkeyHubApp.Android\MonkeyHubApp.Android.csproj", "{4CF83183-CE04-4578-BACB-8A9FFD11A2B6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0956EBA0-9C36-4D19-9431-DFFA37814F64} = {0956EBA0-9C36-4D19-9431-DFFA37814F64}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonkeyHubApp", "MonkeyHubApp\MonkeyHubApp\MonkeyHubApp.csproj", "{0956EBA0-9C36-4D19-9431-DFFA37814F64}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonkeyHubApp.UWP", "MonkeyHubApp\MonkeyHubApp.UWP\MonkeyHubApp.UWP.csproj", "{A8173120-0DD7-4B14-B386-ED2F35724381}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0956EBA0-9C36-4D19-9431-DFFA37814F64} = {0956EBA0-9C36-4D19-9431-DFFA37814F64}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonkeyHubApp.iOS", "MonkeyHubApp\MonkeyHubApp.iOS\MonkeyHubApp.iOS.csproj", "{59796333-BC2F-4074-B0B7-C604268DBED3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0956EBA0-9C36-4D19-9431-DFFA37814F64} = {0956EBA0-9C36-4D19-9431-DFFA37814F64}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
